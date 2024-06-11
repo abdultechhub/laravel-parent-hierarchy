@@ -1,0 +1,62 @@
+--installation
+step 01 : composer install
+step 02 : php artisan key:generate
+step 03 : update the database details in the .env file
+step 04 : php artisan migrate --seed   (OR we can just import the dump .sql file added in the zip folder root-directory/sql_dump  folder)
+
+--software vsersion
+laravel : 10.10
+php  : 8.1
+mysql : mysqlnd 8.1.25
+
+--user
+user name = admin@admin.com
+password  = password
+
+or you can take any email id from uer table use password as password   then you willbe authenticated
+
+--migration and factory
+all table migration are available in /database/migration directory
+all factory class are available in /database/factory directory
+
+
+--auth
+I am using breeze to authenticate user which scafolding are using telwind css
+currently i have disabled the register route
+currently i did not implement any role permission (due less time) i am using default web auth guard
+
+--timezone
+i am using 'Asia/Kolkata'  time which available in config/app.php
+
+--route
+all auth route are default as it is
+for category i have added a resource route that is by default nammed route (reverse route) (asked in the meeting)
+and i have added one more post nammed route for changing category statu
+
+--soft delete
+added soft delete features
+while deleteing record it will not delete category permanantly it manages the deleted_at column
+
+
+//pagination and filter
+I have added  Paginator::useBootstrap();   in AppServiceProvider boot method to bootstrap pagination 
+and added an small filter and search option using get method
+
+--custom helper
+i have created a helper.php file inside app/Helpers/helper.php  and autolod it composer.json
+in this file i have added two method 
+1 .  for greetings
+2.  for active link
+
+
+--ajax
+i have added jQuery ajax for updating category status
+i have also added js confirm box to to show the confiramtion message while deleting any record
+
+
+
+---All provided condition on mail has been implemented--- 
+
+
+
+
